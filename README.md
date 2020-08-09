@@ -6,9 +6,8 @@ I needed a way to track hours worked on a project. This is a follow up to my tim
 I generally have all my programs installed under `~/programs/`, but you can navigate to wherever.  
 * `git clone https://github.com/cotycrosby/invoice.git` 
 
-#### Install PHP
-* I'm using php v7.3 at the time of writing this. 
-* If you're on windows you will need to have PHP set to your PATH variables.
+#### Install PHP and Composer
+Install php7.4 and composer and run `composer update`  
 
 #### Creating an alias
 * I highly recommend creating an alias for this `php /path/to/where/the/invoice/tool/is/located/index.php/`
