@@ -1,0 +1,13 @@
+{
+    "name": "coty/invoicer",
+    "require": {
+        "splitbrain/php-cli": "^1.1",
+        "illuminate/database": "^7.24"
+		},
+		"autoload": {
+			"psr-4":{
+				"App\\": "app",
+				"Model\\": "models"
+			}
+		}
+}
