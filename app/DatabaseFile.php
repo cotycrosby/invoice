@@ -39,13 +39,13 @@ class DatabaseFile
 		$capsule = new Capsule;
 		$dbFile = self::get();
 
-		if(!$dbFile) {
-			die("Database File was not found. Please try again.");
+		if(!self::exists()) {
+			return false; // we didn't find the file, exit gracefully;
 		}
 
 		$capsule->addConnection([
 				'driver'    => 'sqlite',
-				'database'  => $dbFile,
+				'database'  => self::get(),
 				'collation' => 'utf8_unicode_ci',
 				'prefix'    => '',
 		]);
@@ -56,6 +56,10 @@ class DatabaseFile
 
 		// Setup the Eloquent ORM... (optional; unless you've used setEventDispatcher())
 		$capsule->bootEloquent();
+
+		return true;
+		
+		
 
 	}
 
