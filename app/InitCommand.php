@@ -19,7 +19,7 @@ class InitCommand extends Command
 			$output->writeln('<fg=red;>The database file already exists. If you initialize it it will wipe the data.</>');
 			$output->writeln('');
 			$output->writeln('If you wish to proceed, run: <bg=red;fg=white;>rm .invoice.db</>');
-			return 1;
+			return Command::FAILURE;
 		}
 
 		DatabaseFile::create();
@@ -27,6 +27,6 @@ class InitCommand extends Command
 		DatabaseFile::initialize();
 		$output->writeln('<fg=green;>Database created successfully!</>');
 		
-		return 0;
+		return Command::SUCCESS;
 	}
 }
